@@ -6,8 +6,10 @@ const Login = () => {
   const [user, setUser] = useState(
     () => JSON.parse(localStorage.getItem("googleUser")) || null
   );
-  // const [ user, setUser ] = useState([]);
   const [profile, setProfile] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       setUser(codeResponse);
@@ -29,27 +31,30 @@ const Login = () => {
           }
         )
         .then((res) => {
-          console.log("res===>", res);
           setProfile(res.data);
         })
         .catch((err) => console.log(err));
     }
   }, [user]);
 
-  // log out function to log the user out of google and set the profile array to null
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Handle email/password login logic here
+    console.log("Logging in with email and password:", email, password);
+  };
+
   const logOut = () => {
     googleLogout();
-    setUser(null); //add
+    setUser(null);
     setProfile(null);
     localStorage.removeItem("googleUser");
   };
 
-  // <=====================>
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="card w-96 bg-white shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center mb-4">
-          E-Ticket System Google Login
+          E-Ticket System Login
         </h2>
         {profile ? (
           <div className="text-center">
@@ -66,9 +71,51 @@ const Login = () => {
             </button>
           </div>
         ) : (
-          <button onClick={login} className="btn btn-primary btn-block">
-            Sign in with Google
-          </button>
+          <>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary btn-block">
+                Sign In
+              </button>
+            </form>
+            <div className="text-center mt-4">
+              <button
+                onClick={login}
+                className="btn btn-outline btn-block mb-2"
+              >
+                Sign in with Google
+              </button>
+              <p className="text-sm">
+                Don't have an account?{" "}
+                <a href="/register" className="text-blue-600 hover:underline">
+                  Please Register
+                </a>
+              </p>
+            </div>
+          </>
         )}
       </div>
     </div>

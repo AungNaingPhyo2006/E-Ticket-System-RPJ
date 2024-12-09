@@ -9,6 +9,7 @@ import ReceiptHistory from "../pages/receiptHistory";
 import TicketHistory from "../pages/ticketsHistory";
 import Events from "../pages/event";
 import Products from "../pages/ticket";
+import Register from "../pages/register/Register";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       { path: "/ticket-history", element: <TicketHistory /> },
       {
