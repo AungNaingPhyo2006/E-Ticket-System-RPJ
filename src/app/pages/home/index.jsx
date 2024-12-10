@@ -9,14 +9,14 @@ const Home = () => {
   const festivalSection = sectionList.find((section) => section.isFestival === 1);
   const otherSection = sectionList.find((section) => section.isFestival === 0);
   return (
-    <section>
+    <section className="bg-gray-200 flex flex-col items-center justify-center min-h-screen">
       {festivalSection && (
-        <div>
+          <div className="w-full max-w-4xl">
           <FestivalList id={festivalSection.categoryId} title={festivalSection.title} itemList={festivalSection.itemList}/>
         </div>
       )}
       {otherSection && (
-        <div>
+          <div className="w-full max-w-4xl">
           <ProductsLists id={otherSection.categoryId}  title={otherSection.title} itemList={otherSection.itemList} />
         </div>
       )}
