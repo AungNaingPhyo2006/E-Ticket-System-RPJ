@@ -52,3 +52,23 @@ export const sectionList = [
       location: "MICT Park",
     },
   ];
+
+  export const ticketList = [
+    {
+      id: 1,
+      ticketType: "Single",
+      ticketRole: "GA",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 30000,
+      date: ["2024-12-07"],
+    },
+    {
+      id: 2,
+      ticketType: "Combo",
+      ticketRole: "VIP",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 30000,
+      date: ["2024-12-07", "2024-12-08"],
+    },
+  ];
+  
