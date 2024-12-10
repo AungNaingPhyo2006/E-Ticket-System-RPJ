@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ const Register = () => {
 
     // Add your registration logic here (e.g., send data to your backend)
     console.log("Registering user with email:", email, "password:", password);
+    navigate("/login");
   };
 
   return (

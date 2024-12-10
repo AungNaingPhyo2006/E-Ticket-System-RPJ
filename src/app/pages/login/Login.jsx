@@ -6,7 +6,7 @@ const Login = () => {
   const [user, setUser] = useState(
     () => JSON.parse(localStorage.getItem("googleUser")) || null
   );
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -97,14 +97,19 @@ const Login = () => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary btn-block">
+              <button type="submit" className="btn btn-primary btn-block mt-4">
                 Sign In
               </button>
             </form>
+            <div className="flex items-center my-4">
+              <div className="border-t border-gray-300 flex-grow"></div>
+              <span className="px-3 text-sm text-gray-500">OR</span>
+              <div className="border-t border-gray-300 flex-grow"></div>
+            </div>
             <div className="text-center mt-4">
               <button
                 onClick={login}
-                className="btn btn-outline btn-block mb-2"
+                className="btn btn-outline btn-block mt-2 mb-2"
               >
                 Sign in with Google
               </button>
