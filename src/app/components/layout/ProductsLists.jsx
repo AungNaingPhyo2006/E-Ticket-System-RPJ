@@ -25,10 +25,12 @@ const ProductsLists = ({id, title,itemList}) => {
 </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {itemList.map((item) => (
+         <Link to={`/product-detail/${item.id}`}>
         <div key={item.id} className="card bg-base-200 shadow-md p-4  h-30 items-center justify-center bg-gray-800 cursor-pointer duration-300 active:scale-95 rounded-lg shadow-xl overflow-hidden">
           <img src={item.photo} alt={item.name} className="w-60 h-30 object-cover mb-4 rounded-md" />
-          <p className="text-lg font-semibold">{item.name}</p>
+          <p className="text-lg font-semibold text-white">{item.name}</p>
         </div>
+         </Link> 
       ))}
     </div>
   </div>
