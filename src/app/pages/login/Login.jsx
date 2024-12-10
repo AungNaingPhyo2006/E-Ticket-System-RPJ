@@ -52,12 +52,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-base-100">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="card w-96 bg-white shadow-xl p-6 mx-4 sm:mx-auto">
         <h2 className="text-2xl font-bold text-center mb-4">
           E-Ticket System Login
         </h2>
-        {profile ? (
+        {profile ? (    // <section>
+    //   <FestivalList />
+    //   {/* <TicketList /> */}
+    //   <ProductsLists />
+    // </section>
           <div className="text-center">
             <img
               src={profile.picture}

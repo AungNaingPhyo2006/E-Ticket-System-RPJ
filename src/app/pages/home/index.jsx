@@ -21,13 +21,7 @@ const Home = () => {
         </div>
       )}
       <Footer />
-
     </section>
-    // <section>
-    //   <FestivalList />
-    //   {/* <TicketList /> */}
-    //   <ProductsLists />
-    // </section>
   );
 };
 

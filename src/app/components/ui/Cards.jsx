@@ -3,9 +3,9 @@ import { CalendarDays, MapPin } from "lucide-react";
 
 const Cards = ({ festival }) => {
   return (
-    <div className="bg-gray-800 cursor-pointer duration-300 active:scale-95 rounded-lg shadow-xl overflow-hidden">
+    <div className="bg-gray-200 cursor-pointer duration-300 active:scale-95 rounded-lg shadow-xl overflow-hidden">
     <div key={festival.id} className="w-full">
-         <div className="card bg-base-200 shadow-md p-4 h-90">
+         <div className="card bg-gray-200 shadow-md p-4 h-90">
            <img
              src={festival.photo}
              alt={festival.name}
