@@ -30,7 +30,7 @@ export const sectionList = [
     {
       id: 1,
       name: "Over Flow",
-      photo: "url",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' ,
       startDate: "2024-12-07",
       endDate: "2024-12-08",
       location: "Yangon Easter Park",
@@ -38,9 +38,17 @@ export const sectionList = [
     {
       id: 2,
       name: "NYER",
-      photo: "url",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' ,
       startDate: "2024-12-30",
       endDate: "2024-12-30",
       location: "Yangon Easter Park",
+    },
+    {
+      id: 3,
+      name: "X Mas",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' ,
+      startDate: "2024-12-24",
+      endDate: "2024-12-25",
+      location: "MICT Park",
     },
   ];
