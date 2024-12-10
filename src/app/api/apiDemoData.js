@@ -135,7 +135,7 @@ export const sectionList = [
     ],
   };
 
-  //url/api/v1/item/{id}
+  //url/api/v1/item/{id} for productItemDetail
   export const itemList = [
     {
       id: 1,
@@ -186,4 +186,33 @@ export const sectionList = [
       description: "Soothes the throat and relieves cough symptoms.",
     },
   ];
+
+   //url/api/v1/ticket/{id}
+   export const ticketDetailData = [
+    {
+      id: 1,
+      ticketType: "Single",
+      ticketRole: "GA",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 30000,
+      date: ["2024-12-07"],
+    },
+    {
+      id: 2,
+      ticketType: "Round-Trip",
+      ticketRole: "VIP",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 50000,
+      date: ["2024-12-08", "2024-12-09"],
+    },
+    {
+      id: 3,
+      ticketType: "Group",
+      ticketRole: "GA",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 80000,
+      date: ["2024-12-10"],
+    },
+  ];
+  
   
