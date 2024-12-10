@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { GhostIcon, Glasses, Globe, Globe2, GlobeIcon, GlobeLock } from "lucide-react";
 
 const Login = () => {
   const [user, setUser] = useState(
@@ -52,7 +53,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-base-100">
-      <div className="card w-96 bg-white shadow-xl p-6">
+      <div className="card w-96 bg-white shadow-xl p-6 mx-4 sm:mx-auto">
         <h2 className="text-2xl font-bold text-center mb-4">
           E-Ticket System Login
         </h2>
@@ -97,7 +98,8 @@ const Login = () => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary btn-block mt-4">
+              <div className="h-8"></div> 
+              <button type="submit" className="btn btn-primary btn-block">
                 Sign In
               </button>
             </form>
@@ -106,14 +108,15 @@ const Login = () => {
               <span className="px-3 text-sm text-gray-500">OR</span>
               <div className="border-t border-gray-300 flex-grow"></div>
             </div>
-            <div className="text-center mt-4">
+            <div className="text-center mt-2">
               <button
                 onClick={login}
                 className="btn btn-outline btn-block mt-2 mb-2"
               >
-                Sign in with Google
+                <Globe className="w-5 h-5" />
+                <span>Sign in with Google</span>
               </button>
-              <p className="text-sm">
+              <p className="text-sm mt-4">
                 Don't have an account?{" "}
                 <a href="/register" className="text-blue-600 hover:underline">
                   Please Register
@@ -128,3 +131,8 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
