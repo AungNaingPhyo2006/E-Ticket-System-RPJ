@@ -3,6 +3,7 @@ import FestivalList from "../../components/layout/FestivalList";
 import ProductsLists from "../../components/layout/ProductsLists";
 import TicketList from "../../components/layout/TicketList";
 import { sectionList } from "../../api/apiDemoData";
+import Footer from "../../components/ui/Footer";
 
 const Section = ({ title, itemList }) => (
   <div className="card w-full bg-base-100 shadow-xl p-4 mb-6">
@@ -25,14 +26,16 @@ const Home = () => {
     <section>
       {festivalSection && (
         <div>
-          <FestivalList title={festivalSection.title} itemList={festivalSection.itemList}/>
+          <FestivalList id={festivalSection.isFestival} title={festivalSection.title} itemList={festivalSection.itemList}/>
         </div>
       )}
       {otherSection && (
         <div>
-          <ProductsLists title={otherSection.title} itemList={otherSection.itemList} />
+          <ProductsLists id={otherSection.isFestival}  title={otherSection.title} itemList={otherSection.itemList} />
         </div>
       )}
+      <Footer />
+
     </section>
     // <section>
     //   <FestivalList />

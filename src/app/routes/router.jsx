@@ -10,6 +10,8 @@ import TicketHistory from "../pages/ticketsHistory";
 import Events from "../pages/event";
 import Products from "../pages/ticket";
 import Register from "../pages/register/Register";
+import AllEventList from "../pages/allEventList";
+import AllProductList from "../pages/allProductList";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
       {
         path: "/receipt-history",
         element: <ReceiptHistory />,
+      },
+      {
+        path: "/event-list/:id",
+        element: <AllEventList/>,
+      },
+      {
+        path: "/product-list/:id",
+        element: <AllProductList/>,
       },
     ],
   },

@@ -1,12 +1,15 @@
 import React from "react";
 import ProductCard from "../ui/ProductCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SliderBtn from "../ui/SliderBtn";
 import { usePosts } from "../../api/reactQuery";
 import { Loader2 } from "lucide-react";
 
-const ProductsLists = ({title,itemList}) => {
-  
+const ProductsLists = ({id, title,itemList}) => {
+  const navigate = useNavigate();
+  const handleSeeAllClick = () => {
+    navigate(`/product-list/${id}`);
+  };
   const { data: products, isLoading, isError } = usePosts();
 
   return (
@@ -15,7 +18,7 @@ const ProductsLists = ({title,itemList}) => {
        <div className="flex items-center justify-between mb-4">
      <h2 className="card-title text-xl">{title}</h2>
   <button 
-    onClick={() => console.log("See more clicked")} 
+    onClick={handleSeeAllClick} 
     className="text-blue-500 hover:underline focus:outline-none">
     <h2 className="card-title text-xl">See All</h2>
   </button>
