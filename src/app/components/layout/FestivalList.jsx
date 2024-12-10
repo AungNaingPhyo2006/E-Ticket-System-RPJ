@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 const FestivalList = ({id, title, itemList }) => {
   const navigate = useNavigate();
   const handleSeeAllClick = () => {
-    navigate(`/event-list/${id}`);
+    navigate("/events");
+    // navigate(`/event-list/${id}`);
   };
   // <================>
   return (
