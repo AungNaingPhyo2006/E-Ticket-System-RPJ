@@ -10,7 +10,7 @@ const FestivalList = ({id, title, itemList }) => {
   };
   // <================>
   return (
-    <div className="card w-full bg-base-200  p-4 mb-6">
+    <div className=" w-full p-4 my-6">
      <div className="flex items-center justify-between mb-4">
      <h2 className="card-title text-xl">{title}</h2>
   <button
