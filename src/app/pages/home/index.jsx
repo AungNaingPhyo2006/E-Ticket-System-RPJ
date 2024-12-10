@@ -26,12 +26,12 @@ const Home = () => {
     <section>
       {festivalSection && (
         <div>
-          <FestivalList id={festivalSection.isFestival} title={festivalSection.title} itemList={festivalSection.itemList}/>
+          <FestivalList id={festivalSection.categoryId} title={festivalSection.title} itemList={festivalSection.itemList}/>
         </div>
       )}
       {otherSection && (
         <div>
-          <ProductsLists id={otherSection.isFestival}  title={otherSection.title} itemList={otherSection.itemList} />
+          <ProductsLists id={otherSection.categoryId}  title={otherSection.title} itemList={otherSection.itemList} />
         </div>
       )}
       <Footer />

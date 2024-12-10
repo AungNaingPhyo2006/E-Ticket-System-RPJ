@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-
+import { eventList } from '../../api/apiDemoData';
 const AllEventList = (props) => {
     const { id } = useParams();
   return (
