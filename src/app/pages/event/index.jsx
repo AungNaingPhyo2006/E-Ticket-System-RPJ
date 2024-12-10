@@ -1,21 +1,37 @@
 import React from "react";
+import { eventList } from "../../api/apiDemoData";
 
 const Events = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-neutral-content text-center">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Events</h1>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-        </div>
+    <div className="min-h-screen bg-base-200 p-8">
+      <h1 className="text-5xl font-bold text-center mb-8">Events</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-screen">
+        {eventList.slice(0, 3).map((event) => (
+          <div
+            key={event.id}
+            className="relative w-full h-full rounded-[10px] overflow-hidden"
+            style={{ height: "300px" }}
+          >
+            <img
+              src={event.photo}
+              alt={event.name}
+              className="w-full h-full object-cover"
+              style={{ height: "100%" }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+              <h2 className="text-lg font-bold">{event.name}</h2>
+              <p className="text-sm">{event.location}</p>
+              <p className="text-sm">Start Date: {event.startDate}</p>
+            <p className="text-sm">End Date: {event.endDate}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Events;
+
+
+
