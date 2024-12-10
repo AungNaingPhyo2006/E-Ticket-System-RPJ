@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen bg-base-100">
       <div className="card w-96 bg-white shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center mb-4">
           E-Ticket System Login
