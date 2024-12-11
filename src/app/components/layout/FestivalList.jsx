@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 const FestivalList = ({id, title, itemList }) => {
   const navigate = useNavigate();
   const handleSeeAllClick = () => {
-    navigate(`/event-list/${id}`);
+    navigate("/events");
+    // navigate(`/event-list/${id}`);
   };
   // <================>
   return (
-    <div className="card w-full bg-base-100 shadow-xl p-4 mb-6">
+    <div className=" w-full p-4 my-6">
      <div className="flex items-center justify-between mb-4">
      <h2 className="card-title text-xl">{title}</h2>
   <button

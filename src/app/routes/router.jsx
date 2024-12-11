@@ -10,7 +10,7 @@ import TicketHistory from "../pages/ticketsHistory";
 import Events from "../pages/event";
 import Products from "../pages/ticket";
 import Register from "../pages/register/Register";
-import AllEventList from "../pages/allEventList";
+import ProductDetails from "../pages/productDetails";
 import AllProductList from "../pages/allProductList";
 import TicketList from "../pages/ticketLists/TicketLists";
 
@@ -59,8 +59,8 @@ const router = createBrowserRouter([
         element: <ReceiptHistory />,
       },
       {
-        path: "/event-list/:id",
-        element: <AllEventList/>,
+        path: "/product-detail/:id",
+        element: <ProductDetails/>,
       },
       {
         path: "/product-list/:id",

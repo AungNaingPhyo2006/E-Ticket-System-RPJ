@@ -1,4 +1,4 @@
-//Home Page
+//url/api/v1/home-page
 export const sectionList = [
     {
       id: 1,
@@ -16,16 +16,41 @@ export const sectionList = [
       title: 'Medical Items',
       categoryId: 2,
       itemList: [
-        { id: 1, name: 'Paracetamol',  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-        { id: 2, name: 'Air-X',  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-        { id: 3, name: 'Air-X',  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-        { id: 4, name: 'Air-X',  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-        { id: 5, name: 'Air-X',  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-      
-    ],
+        {
+          id: 1,
+          name: "Aspirin",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+        {
+          id: 2,
+          name: "Ibuprofen",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+        {
+          id: 3,
+          name: "Amoxicillin",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+        {
+          id: 4,
+          name: "Metformin",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+        {
+          id: 5,
+          name: "Loratadine",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+        {
+          id: 6,
+          name: "Cough Syrup",
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+        },
+      ],
     },
   ];
 
+  // url/api/v1/festival
   export const eventList = [
     {
       id: 1,
@@ -53,6 +78,7 @@ export const sectionList = [
     },
   ];
 
+  // url/api/v1/ticket/{festivalId}
   export const ticketList = [
     {
       id: 1,
@@ -71,4 +97,122 @@ export const sectionList = [
       date: ["2024-12-07", "2024-12-08"],
     },
   ];
+
+  // url/api/v1/item/{categoryId}
+  export const productList = {
+    title: "Medical Items",
+    itemList: [
+      {
+        id: 1,
+        name: "Aspirin",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+      {
+        id: 2,
+        name: "Ibuprofen",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+      {
+        id: 3,
+        name: "Amoxicillin",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+      {
+        id: 4,
+        name: "Metformin",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+      {
+        id: 5,
+        name: "Loratadine",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+      {
+        id: 6,
+        name: "Cough Syrup",
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      },
+    ],
+  };
+
+  //url/api/v1/item/{id} for productItemDetail
+  export const itemList = [
+    {
+      id: 1,
+      name: "Aspirin",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 500,
+      stock: 20,
+      description: "Used to reduce pain, fever, or inflammation.",
+    },
+    {
+      id: 2,
+      name: "Ibuprofen",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 1500,
+      stock: 15,
+      description: "Effective for relieving pain and reducing inflammation.",
+    },
+    {
+      id: 3,
+      name: "Amoxicillin",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 1000,
+      stock: 25,
+      description: "A commonly used antibiotic for bacterial infections.",
+    },
+    {
+      id: 4,
+      name: "Metformin",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 1200,
+      stock: 18,
+      description: "Widely used for the treatment of type 2 diabetes.",
+    },
+    {
+      id: 5,
+      name: "Loratadine",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 700,
+      stock: 30,
+      description: "Antihistamine for allergy relief.",
+    },
+    {
+      id: 6,
+      name: "Cough Syrup",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 300,
+      stock: 40,
+      description: "Soothes the throat and relieves cough symptoms.",
+    },
+  ];
+
+   //url/api/v1/ticket/{id}
+   export const ticketDetailData = [
+    {
+      id: 1,
+      ticketType: "Single",
+      ticketRole: "GA",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 30000,
+      date: ["2024-12-07"],
+    },
+    {
+      id: 2,
+      ticketType: "Round-Trip",
+      ticketRole: "VIP",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 50000,
+      date: ["2024-12-08", "2024-12-09"],
+    },
+    {
+      id: 3,
+      ticketType: "Group",
+      ticketRole: "GA",
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s',
+      price: 80000,
+      date: ["2024-12-10"],
+    },
+  ];
+  
   
