@@ -13,6 +13,7 @@ import Register from "../pages/register/Register";
 import ProductDetails from "../pages/productDetails";
 import AllProductList from "../pages/allProductList";
 import TicketList from "../pages/ticketLists/TicketLists";
+import MyCart from "../pages/addToCart";
 
 const router = createBrowserRouter([
   {
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      // {
-      //   path: "/my-cart",
-      //   element: <MyCart />,
-      // },
+      {
+        path: "/my-cart",
+        element: <MyCart />,
+      },
       {
         path: "/login",
         element: <Login />,

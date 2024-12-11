@@ -66,14 +66,14 @@ const Header = () => {
           </div>
 
           <div className="flex gap-5 items-center">
-            {/* <Link to={"/my-cart"}>
+            <Link to={"/my-cart"}>
               <button className="relative border border-gray-300 rounded-md px-3 py-2">
                 <ShoppingCart size={"20"} color="white" />
                 <span className="absolute rounded-2xl top-0 right-0 font-semibold translate-x-1/2 -translate-y-1/2 inline-block text-xs bg-red-500 text-gray-300 px-1 ">
                   0
                 </span>
               </button>
-            </Link> */}
+            </Link>
             <div>
             <Link to={"/login"}>
               <button className=" border border-gray-300 b rounded-md px-4 py-2">
