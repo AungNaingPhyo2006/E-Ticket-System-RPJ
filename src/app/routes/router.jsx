@@ -14,6 +14,7 @@ import ProductDetails from "../pages/productDetails";
 import AllProductList from "../pages/allProductList";
 import TicketList from "../pages/ticketLists/TicketLists";
 import MyCart from "../pages/addToCart";
+import TicketDetail from "../pages/ticketDetails/TicketDetails";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/ticketLists",
         element: <TicketList/>,
+      },
+      {
+        path: "/ticket-detail/:ticketId",
+        element: <TicketDetail/>,
       },
     ],
   },
