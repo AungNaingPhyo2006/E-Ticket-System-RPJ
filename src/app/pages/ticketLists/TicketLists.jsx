@@ -1,3 +1,4 @@
+import { ChevronLeft } from "lucide-react";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -11,14 +12,17 @@ const TicketList = () => {
   };
   return (
     <div className="min-h-screen bg-base-200 p-4 md:p-8 relative">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 bg-gray-200 text-black py-2 px-4 rounded hover:bg-primary-focus"
-      >
-        Back
-      </button>
+     
+      <div className="w-full max-w-4xl  gap-4 mx-auto my-5" >
+            <button 
+            className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
+            onClick={() => navigate(-1)}
+          >
 
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">Ticket List</h1>
+            <ChevronLeft className="w-5 h-5" />
+            <h1 className="font-bold">Ticket List</h1> 
+          </button>
+      </div>
 
       <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto" >
       {tickets.map((ticket) => (

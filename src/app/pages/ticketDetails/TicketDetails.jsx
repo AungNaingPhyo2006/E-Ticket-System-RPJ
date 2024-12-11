@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ticketDetailData } from "../../api/apiDemoData";
+import { ChevronLeft } from "lucide-react";
 
 const TicketDetail = () => {
   const { ticketId } = useParams();
@@ -30,17 +31,20 @@ const TicketDetail = () => {
 
   return (
     <div className="min-h-screen bg-base-200 p-4 md:p-8 flex items-center justify-center">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 bg-gray-200 text-black py-2 px-4 rounded hover:bg-primary-focus"
-      >
-        Back
-      </button>
 
       <div className="max-w-8xl mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8">Ticket Detail</h1>
-        
-        <div className="flex flex-col items-center p-4 border rounded shadow">
+      <div className="w-full max-w-4xl  gap-4 mx-auto my-5" >
+            <button 
+            className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
+            onClick={() => navigate(-1)}
+          >
+
+            <ChevronLeft className="w-5 h-5" />
+            <h1 className="font-bold">Ticket Details</h1> 
+          </button>
+      </div>
+            
+      <div className="flex flex-col items-center p-4 border rounded shadow">
           <img
             src={ticket.photo}
             alt={ticket.ticketType}

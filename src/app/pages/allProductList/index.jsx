@@ -1,12 +1,22 @@
 import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { productList } from '../../api/apiDemoData';
+import { ChevronLeft } from 'lucide-react';
 
 const AllProductList = () => {
+  const navigate = useNavigate();
    return (
     <div className="container mx-auto p-4">
-     <h2 className="card-title text-xl">{productList.title}</h2>
-     {/* <h2 className="card-title text-xl"> Product catagory ID is {id}</h2> */}
+      <div className='container mx-auto flex items-center  justify-between  space-x-4'>
+      <button 
+        className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
+        onClick={() => navigate(-1)}
+      >
+        <ChevronLeft className="w-5 h-5" />
+       <h2 className="card-title text-xl">{productList.title}</h2>
+      </button>
+      </div>
+    
 
      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {productList.itemList.map((product) => (
