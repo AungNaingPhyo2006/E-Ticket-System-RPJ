@@ -1,6 +1,7 @@
 import React from "react";
 import Cards from "../ui/Cards";
 import { useNavigate } from "react-router-dom";
+import { ticketList } from "../../api/apiDemoData";
 
 const FestivalList = ({id, title, itemList }) => {
   const navigate = useNavigate();
@@ -8,7 +9,13 @@ const FestivalList = ({id, title, itemList }) => {
     navigate("/events");
     // navigate(`/event-list/${id}`);
   };
-  // <================>
+
+  const handleEventClick = (eventId) => {
+    const relatedTickets = ticketList.filter((ticket) => ticket.id === eventId);
+
+    navigate("/ticketLists", { state: { tickets: relatedTickets } });
+  }; 
+   // <================>
   return (
     <div className=" w-full p-4 my-6">
      <div className="flex items-center justify-between mb-4">
@@ -20,11 +27,18 @@ const FestivalList = ({id, title, itemList }) => {
   </button>
 </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-      {itemList.map((festival) => (
+      {/* {itemList.map((festival) => (
            <div key={festival.id} className="w-full lg:w-auto lg:h-auto">
              <Cards festival={festival} /> 
              </div>
-      ))}
+      ))} */}
+       {itemList.map((festival) => (
+          <div key={festival.id} className="w-full lg:w-auto lg:h-auto">
+            <div onClick={() => handleEventClick(festival.id)}>
+              <Cards festival={festival} />
+            </div>
+          </div>
+        ))}
     </div>
   </div>
   );
