@@ -8,7 +8,7 @@ const AllProductList = () => {
      <h2 className="card-title text-xl">{productList.title}</h2>
      {/* <h2 className="card-title text-xl"> Product catagory ID is {id}</h2> */}
 
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {productList.itemList.map((product) => (
            <Link
            to={`/product-detail/${product.id}`}>
