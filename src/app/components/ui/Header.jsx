@@ -141,6 +141,24 @@ const Header = () => {
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
+            <li>
+              <button
+                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                onClick={() => handleMenuClick("/my-cart")}
+              >
+                My Cart
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                onClick={() => handleMenuClick("/login")}
+              >
+                Login
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
