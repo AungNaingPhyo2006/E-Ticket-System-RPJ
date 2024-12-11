@@ -29,7 +29,7 @@ const TicketDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-base-200 p-4 md:p-8">
+    <div className="min-h-screen bg-base-200 p-4 md:p-8 flex items-center justify-center">
       <button
         onClick={() => navigate(-1)}
         className="absolute top-4 left-4 bg-gray-200 text-black py-2 px-4 rounded hover:bg-primary-focus"
@@ -37,27 +37,27 @@ const TicketDetail = () => {
         Back
       </button>
 
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">Ticket Detail</h1>
+      <div className="max-w-8xl mx-auto">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8">Ticket Detail</h1>
         
-        <div className="p-4 border rounded shadow">
+        <div className="flex flex-col items-center p-4 border rounded shadow">
           <img
             src={ticket.photo}
             alt={ticket.ticketType}
-            className="w-full h-40 object-cover mb-4 rounded-lg"
+            className="w-40 h-50 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
           />
-          <h2 className="text-lg font-bold">{ticket.ticketType} - {ticket.ticketRole}</h2>
-          <p className="text-sm">Price: {ticket.price}</p>
-          <p className="text-sm">Dates: {ticket.date.join(", ")}</p>
+          <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-center">{ticket.ticketType} - {ticket.ticketRole}</h2>
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Price: {ticket.price}</p>
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
 
-          <div className="my-4">
-            <label className="block text-sm font-bold mb-2">Quantity</label>
+          <div className="my-4 text-center">
+            <label className="block text-sm sm:text-base font-bold mb-2">Quantity</label>
             <input
               type="number"
               value={ticketCount}
               onChange={(e) => setTicketCount(Number(e.target.value))}
               min="1"
-              className="p-2 border rounded w-24"
+              className="p-2 border rounded w-24 sm:w-32 lg:w-40 mx-auto"
             />
           </div>
 
@@ -74,6 +74,12 @@ const TicketDetail = () => {
 };
 
 export default TicketDetail;
+
+
+
+
+
+
 
 
 
