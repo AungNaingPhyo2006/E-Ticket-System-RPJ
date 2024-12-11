@@ -12,6 +12,7 @@ import Products from "../pages/ticket";
 import Register from "../pages/register/Register";
 import AllEventList from "../pages/allEventList";
 import AllProductList from "../pages/allProductList";
+import TicketList from "../pages/ticketLists/TicketLists";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/product-list/:id",
         element: <AllProductList/>,
+      },
+      {
+        path: "/ticketLists",
+        element: <TicketList/>,
       },
     ],
   },

@@ -1,7 +1,16 @@
 import React from "react";
-import { eventList } from "../../api/apiDemoData";
+import { useNavigate } from "react-router-dom";
+import { eventList, ticketList } from "../../api/apiDemoData";
 
 const Events = () => {
+  const navigate = useNavigate();
+
+  const handleEventClick = (eventId) => {
+    const relatedTickets = ticketList.filter((ticket) => ticket.id === eventId);
+
+    navigate("/ticketLists", { state: { tickets: relatedTickets } });
+  };
+
   return (
     <div className="min-h-screen bg-base-200 p-8">
       <h1 className="text-5xl font-bold text-center mb-8">Events</h1>
@@ -9,8 +18,9 @@ const Events = () => {
         {eventList.slice(0, 3).map((event) => (
           <div
             key={event.id}
-            className="relative w-full h-full rounded-[10px] overflow-hidden"
+            className="relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
             style={{ height: "300px" }}
+            onClick={() => handleEventClick(event.id)}
           >
             <img
               src={event.photo}
@@ -22,7 +32,7 @@ const Events = () => {
               <h2 className="text-lg font-bold">{event.name}</h2>
               <p className="text-sm">{event.location}</p>
               <p className="text-sm">Start Date: {event.startDate}</p>
-            <p className="text-sm">End Date: {event.endDate}</p>
+              <p className="text-sm">End Date: {event.endDate}</p>
             </div>
           </div>
         ))}
@@ -32,6 +42,3 @@ const Events = () => {
 };
 
 export default Events;
-
-
-
