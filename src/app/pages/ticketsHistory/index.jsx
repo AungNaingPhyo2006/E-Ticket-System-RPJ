@@ -28,6 +28,7 @@ const TicketHistory = () => {
                 key={ticketIndex}
                 className="card bg-base-100 shadow-lg p-6 mb-6 max-w-lg mx-auto"
               >
+<<<<<<< Updated upstream
                 <h3 className="text-xl font-bold mb-2">Ticket Details</h3>
                 <p className="mb-2">
                   <span className="font-medium">Serial Number:</span> {ticket.serialNumber}
@@ -48,6 +49,42 @@ const TicketHistory = () => {
                 {/* QR Code */}
                 <div className="mt-4">
                   <span className="font-medium">QR Code:</span>
+=======
+                <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
+              
+                <div className="flex w-full  justify-between mt-4">
+                <div className=" font-semibold "><span>Serial Number</span></div>
+                <div className="w-200  w-1/2">:{ticket.serialNumber}</div>
+               </div>
+
+               <div className="flex w-full  justify-between mt-4">
+                <div className=" font-semibold "><span>Location</span></div>
+                <div className="w-200  w-1/2">:{ticket.Location}</div>
+               </div>
+
+               <div className="flex w-full  justify-between mt-4">
+                <div className=" font-semibold "><span>Date</span></div>
+                <div className="w-200  w-1/2">:{ticket.date.join(", ")}</div>
+               </div>
+
+               <div className="flex w-full  justify-between mt-4">
+                <div className=" font-semibold "><span>Time</span></div>
+                <div className="w-200  w-1/2">:{ticket.time}</div>
+               </div>
+
+               <div className="flex w-full  justify-between mt-4">
+                <div className=" font-semibold "><span>Bought Date</span></div>
+                <div className="w-200  w-1/2">:{ticket["Bought Date"]}</div>
+               </div>
+
+                {/* <p className="mb-2 flex  justify-center">
+                  <span className="font-medium">Serial Number:</span> {ticket.serialNumber}
+                </p> */}
+                
+                {/* QR Code */}
+                <div className="my-16">
+                  <span className="font-medium flex justify-center">QR Code:</span>
+>>>>>>> Stashed changes
                   <div className="flex justify-center">
                     <QRCode value={ticket.qr} size={128} />
                   </div>
