@@ -29,7 +29,7 @@ const TicketList = () => {
       {tickets.map((ticket) => (
           <div key={ticket.id} className="bg-gray-800 p-4 border rounded-lg shadow cursor-pointer" onClick={() => handleTicketClick(ticket.id)}>
             <img          
-            src={assets.ProductImage} 
+            src={assets.TicketImage} 
               // src={ticket.photo}
               alt={ticket.ticketType}
               className="w-full h-70 object-cover mb-4 rounded-lg"
