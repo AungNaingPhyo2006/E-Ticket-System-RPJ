@@ -29,21 +29,33 @@ const TicketHistory = () => {
                 className="card  bg-base-100 shadow-lg p-6 mb-6 max-w-lg mx-auto"
               >
                 <h3 className="text-xl font-bold mb-4 flex justify-center">Ticket Details</h3>
-                <p className="mb-2 flex  justify-center">
-                  <span className="font-medium">Serial Number:</span> {ticket.serialNumber}
-                </p>
-                <p className="mb-2 flex justify-center">
-                  <span className="font-medium">Location:</span> {ticket.Location}
-                </p>
-                <p className="mb-2 flex justify-center">
-                  <span className="font-medium">Date:</span> {ticket.date.join(", ")}
-                </p>
-                <p className="mb-2 flex justify-center">
-                  <span className="font-medium">Time:</span> {ticket.time}
-                </p>
-                <p className="mb-2 flex justify-center">
-                  <span className="font-medium">Bought Date:</span> {ticket["Bought Date"]}
-                </p>
+
+                <div className="flex flex-col p-8 items-center  space-y-2">
+                  <div className="flex w-full  justify-between">
+                    <div className=" font-semibold "><span>Serial Number</span></div>
+                    <div className="w-200  w-1/2">:{ticket.serialNumber}</div>
+                  </div>
+
+                  <div className="flex w-full  justify-between">
+                    <div className=" font-semibold "><span>Location</span></div>
+                    <div className=" w-1/2">:{ticket.Location}</div>
+                  </div>
+
+                  <div className="flex w-full  justify-between">
+                    <div className=" font-semibold "><span>Date</span></div>
+                    <div className=" w-1/2">:{ticket.date.join(", ")}</div>
+                  </div>
+
+                  <div className="flex w-full  justify-between">
+                    <div className=" font-semibold "><span>Time</span></div>
+                    <div className=" w-1/2">:{ticket.time}</div>
+                  </div>
+
+                  <div className="flex w-full  justify-between">
+                    <div className=" font-semibold "><span>Bought Date</span></div>
+                    <div className=" w-1/2">:{ticket["Bought Date"]}</div>
+                  </div>
+                </div>
                 
                 {/* QR Code */}
                 <div className="mt-4">
