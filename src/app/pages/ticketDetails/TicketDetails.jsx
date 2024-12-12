@@ -107,25 +107,25 @@ const TicketDetail = () => {
         <div className="modal modal-open">
           <div className="modal-box">
             <h3 className="font-bold text-center mb-4 text-lg">Confirm Your Purchase</h3>
-            <div className="flex flex-col p-8 items-center bg-primary space-y-3">
-              <div className="flex">
-                <div className="w-1/2 font-semibold"><span>Ticket:</span></div>
-                <div className="w-1/2">{ticket.ticketType} - {ticket.ticketRole}</div>
+            <div className="flex flex-col p-8 items-center  space-y-2">
+              <div className="flex w-full  justify-between">
+                <div className=" font-semibold "><span>Ticket</span></div>
+                <div className="w-200  w-1/2">:{ticket.ticketType} - {ticket.ticketRole}</div>
               </div>
-              
-              <div className="flex">
-                <div className="w-1/2 font-semibold"><span>Price per Ticket:</span></div>
-                <div className="w-1/2">{ticket.price}</div>
+
+              <div className="flex w-full  justify-between">
+                <div className=" font-semibold "><span>Price per Ticket</span></div>
+                <div className=" w-1/2">:{ticket.price}</div>
               </div>
-              
-              <div className="flex">
-                <div className="w-1/2 font-semibold"><span>Quantity:</span></div>
-                <div className="w-1/2">{ticketCount}</div>
+
+              <div className="flex w-full  justify-between">
+                <div className=" font-semibold "><span>Quantity</span></div>
+                <div className=" w-1/2">:{ticketCount}</div>
               </div>
-              
-              <div className="flex">
-                <div className="w-1/2 font-semibold"><span>Total Amount:</span></div>
-                <div className="w-1/2">{ticket.price * ticketCount}</div>
+
+              <div className="flex w-full  justify-between">
+                <div className=" font-semibold "><span>Total Amount:</span></div>
+                <div className=" w-1/2">:{ticket.price * ticketCount}</div>
               </div>
             </div>
 
