@@ -30,22 +30,22 @@ const TicketDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-base-200 p-4 md:p-8 flex items-center justify-center">
+    <div className="min-h-screen bg-base-200 p-4 md:p-8 relative">
+     
+    <div className="w-full max-w-4xl  gap-4 mx-auto my-5" >
+          <button 
+          className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
+          onClick={() => navigate(-1)}
+        >
 
-      <div className="max-w-8xl mx-auto">
-      <div className="w-full max-w-4xl  gap-4 mx-auto my-5" >
-            <button 
-            className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
-            onClick={() => navigate(-1)}
-          >
+          <ChevronLeft className="w-5 h-5" />
+          <h1 className="font-bold">Ticket Details</h1> 
+        </button>
+    </div>
 
-            <ChevronLeft className="w-5 h-5" />
-            <h1 className="font-bold">Ticket Details</h1> 
-          </button>
-      </div>
-            
-      <div className="flex flex-col items-center p-4 border rounded shadow">
-          <img
+    <div className="w-full max-w-4xl  mx-auto" >
+     <div className="flex flex-col items-center p-4 border rounded shadow">
+         <img
             src={ticket.photo}
             alt={ticket.ticketType}
             className="w-40 h-50 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
@@ -70,10 +70,11 @@ const TicketDetail = () => {
             className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-focus"
           >
             Buy Now
-          </button>
-        </div>
-      </div>
+           </button>
+         </div>     
     </div>
+  </div>
+  
   );
 };
 
