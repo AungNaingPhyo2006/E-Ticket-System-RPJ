@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ticketHistoryData } from "../../api/apiDemoData";
 import QRCode from "react-qr-code"; // Import react-qr-code library
+import { toPng } from "html-to-image";
 
 const TicketHistory = () => {
+  const ticketRefs = useRef([]);
+
+  const handleDownloadTicket = async (index) => {
+    if (ticketRefs.current[index]) {
+      try {
+        const dataUrl = await toPng(ticketRefs.current[index]);
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = `ticket-${index + 1}.png`;
+        link.click();
+      } catch (error) {
+        console.error("Failed to generate image for ticket", error);
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen mx-auto p-4 bg-base-200">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">Ticket History</h1>
@@ -24,9 +41,13 @@ const TicketHistory = () => {
 
             {/* Tickets */}
             {festival.ticketList.map((ticket, ticketIndex) => (
+              <>
+               <div 
+               ref={(el) => (ticketRefs.current[ticketIndex] = el)}> 
+               {/* <=====Main=====> */}
               <div
                 key={ticketIndex}
-                className="card bg-base-100 shadow-lg p-6 mb-6 max-w-lg mx-auto"
+                className="card bg-base-100 shadow-lg p-6 mb-2 max-w-lg mx-auto"
               >
                 <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
               
@@ -62,11 +83,29 @@ const TicketHistory = () => {
                 {/* QR Code */}
                 <div className="my-16">
                   <span className="font-medium flex justify-center">QR Code:</span>
-                  <div className="flex justify-center">
-                    <QRCode value={ticket.qr} size={128} />
+                  <div className="flex justify-center ">
+                  <div className="rounded border-2 border-white inline-block">
+                  <QRCode value={ticket.qr} size={128} />
+                  </div>
                   </div>
                 </div>
+              
               </div>
+              {/* <=====Main=====> */}
+              </div>
+
+                     {/* <======Download====> */}
+                     <div className="flex justify-center mb-8">
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => handleDownloadTicket(ticketIndex)}
+                      >
+                        Download Ticket
+                      </button>
+                    </div>
+                {/* <======Download======> */}
+              </>
+
             ))}
           </div>
         ))}
