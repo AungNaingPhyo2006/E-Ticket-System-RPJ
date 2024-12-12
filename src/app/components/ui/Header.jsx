@@ -99,7 +99,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close Drawer"
               >
-                <X size={25} color="white" />
+                <X size={25} color="black" />
               </button>
             </div>
           </div>
