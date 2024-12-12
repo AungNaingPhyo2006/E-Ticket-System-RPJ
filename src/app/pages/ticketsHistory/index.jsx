@@ -31,28 +31,28 @@ const TicketHistory = () => {
                 <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
               
                 <div className="flex w-full  justify-between mt-4">
-                <div className=" font-semibold "><span>Serial Number</span></div>
-                <div className="w-200  w-1/2">:{ticket.serialNumber}</div>
+                <div className="w-2/3 font-semibold "><span>Serial Number</span></div>
+                <div className="w-full break-all">:{ticket.serialNumber}</div>
                </div>
 
                <div className="flex w-full  justify-between mt-4">
-                <div className=" font-semibold "><span>Location</span></div>
-                <div className="w-200  w-1/2">:{ticket.Location}</div>
+                <div className="w-2/3  font-semibold "><span>Location</span></div>
+                <div className="w-full  break-all">:{ticket.Location}</div>
                </div>
 
                <div className="flex w-full  justify-between mt-4">
-                <div className=" font-semibold "><span>Date</span></div>
-                <div className="w-200  w-1/2">:{ticket.date.join(", ")}</div>
+                <div className="w-2/3  font-semibold "><span>Date</span></div>
+                <div className="w-full  break-all">:{ticket.date.join(", ")}</div>
                </div>
 
                <div className="flex w-full  justify-between mt-4">
-                <div className=" font-semibold "><span>Time</span></div>
-                <div className="w-200  w-1/2">:{ticket.time}</div>
+                <div className="w-2/3  font-semibold "><span>Time</span></div>
+                <div className="w-full break-all">:{ticket.time}</div>
                </div>
 
                <div className="flex w-full  justify-between mt-4">
-                <div className=" font-semibold "><span>Bought Date</span></div>
-                <div className="w-200  w-1/2">:{ticket["Bought Date"]}</div>
+                <div className="w-2/3  font-semibold "><span>Bought Date</span></div>
+                <div className="w-full  break-all">:{ticket["Bought Date"]}</div>
                </div>
 
                 {/* <p className="mb-2 flex  justify-center">
