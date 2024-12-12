@@ -26,28 +26,28 @@ const TicketHistory = () => {
             {festival.ticketList.map((ticket, ticketIndex) => (
               <div
                 key={ticketIndex}
-                className="card bg-base-100 shadow-lg p-6 mb-6 max-w-lg mx-auto"
+                className="card  bg-base-100 shadow-lg p-6 mb-6 max-w-lg mx-auto"
               >
-                <h3 className="text-xl font-bold mb-2">Ticket Details</h3>
-                <p className="mb-2">
+                <h3 className="text-xl font-bold mb-4 flex justify-center">Ticket Details</h3>
+                <p className="mb-2 flex  justify-center">
                   <span className="font-medium">Serial Number:</span> {ticket.serialNumber}
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 flex justify-center">
                   <span className="font-medium">Location:</span> {ticket.Location}
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 flex justify-center">
                   <span className="font-medium">Date:</span> {ticket.date.join(", ")}
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 flex justify-center">
                   <span className="font-medium">Time:</span> {ticket.time}
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 flex justify-center">
                   <span className="font-medium">Bought Date:</span> {ticket["Bought Date"]}
                 </p>
                 
                 {/* QR Code */}
                 <div className="mt-4">
-                  <span className="font-medium">QR Code:</span>
+                  <span className="font-medium flex justify-center">QR Code:</span>
                   <div className="flex justify-center">
                     <QRCode value={ticket.qr} size={128} />
                   </div>
