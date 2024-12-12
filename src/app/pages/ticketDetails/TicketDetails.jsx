@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ticketDetailData } from "../../api/apiDemoData";
+import { ChevronLeft } from "lucide-react";
+import assets from "../../assets";
 
 const TicketDetail = () => {
   const { ticketId } = useParams();
@@ -46,26 +48,33 @@ const TicketDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-base-200 p-4 md:p-6 flex items-center justify-center">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 bg-gray-200 text-black py-2 px-4 rounded hover:bg-primary-focus"
-      >
-        Back
-      </button>
+    <div className="min-h-screen bg-base-200 p-4 md:p-8 relative">
+     
+    <div className="w-full max-w-4xl  gap-4 mx-auto my-5" >
+          <button 
+          className="flex items-center space-x-2 text-xl cursor-pointer hover:text-blue-500 focus:outline-none"
+          onClick={() => navigate(-1)}
+        >
 
-      <div className="max-w-8xl mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8">Ticket Detail</h1>
+          <ChevronLeft className="w-5 h-5" />
+          <h1 className="font-bold">Ticket Details</h1> 
+        </button>
+    </div>
 
-        <div className="flex flex-col items-center p-16 border rounded shadow">
-          <img
-            src={ticket.photo}
+    <div className="w-full max-w-4xl  mx-auto" >
+     <div className=" bg-gray-800 flex flex-col items-center p-4 border rounded-lg shadow ">
+         <div className="p-5  rounded-lg items-center">
+         <img
+            src={assets.TicketImage}
+            // src={ticket.photo}
             alt={ticket.ticketType}
-            className="w-50 h-56 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
+            className="w-40 h-70 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
           />
-          <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-center">{ticket.ticketType} - {ticket.ticketRole}</h2>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Price: {ticket.price}</p>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
+         </div>
+        
+          <h2 className="text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-center">{ticket.ticketType} - {ticket.ticketRole}</h2>
+          <p className="text-white text-sm sm:text-base lg:text-lg xl:text-xl text-center">Price: {ticket.price}</p>
+          <p className=" text-white text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
 
           <div className="my-4 text-center">
             <label className="block text-sm sm:text-base font-bold mb-2">Quantity</label>
@@ -132,6 +141,7 @@ const TicketDetail = () => {
         </div>
       )}
     </div>
+  
   );
 };
 

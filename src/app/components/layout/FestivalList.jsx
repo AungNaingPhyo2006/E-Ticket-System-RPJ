@@ -27,11 +27,6 @@ const FestivalList = ({id, title, itemList }) => {
   </button>
 </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-      {/* {itemList.map((festival) => (
-           <div key={festival.id} className="w-full lg:w-auto lg:h-auto">
-             <Cards festival={festival} /> 
-             </div>
-      ))} */}
        {itemList.map((festival) => (
           <div key={festival.id} className="w-full lg:w-auto lg:h-auto">
             <div onClick={() => handleEventClick(festival.id)}>

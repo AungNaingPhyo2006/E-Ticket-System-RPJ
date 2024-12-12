@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { eventList, ticketList } from "../../api/apiDemoData";
+import assets from "../../assets";
 
 const Events = () => {
   const navigate = useNavigate();
@@ -18,12 +19,13 @@ const Events = () => {
         {eventList.slice(0, 3).map((event) => (
           <div
             key={event.id}
-            className="relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
+            className=" p-3 bg-gray-800 relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
             style={{ height: "300px" }}
             onClick={() => handleEventClick(event.id)}
           >
             <img
-              src={event.photo}
+            src={assets.EventImage}
+              // src={event.photo}
               alt={event.name}
               className="w-full h-full object-cover"
               style={{ height: "100%" }}
