@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { productList } from '../../api/apiDemoData';
 import { ChevronLeft } from 'lucide-react';
+import assets from '../../assets';
 
 const AllProductList = () => {
   const navigate = useNavigate();
@@ -18,20 +19,21 @@ const AllProductList = () => {
       </div>
     
 
-     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+     <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {productList.itemList.map((product) => (
            <Link
            to={`/product-detail/${product.id}`}>
           <div
             key={product.id}
-            className="card bg-base-100 shadow-xl p-4 flex flex-col items-center"
+            className="card bg-gray-800 shadow-xl p-4 flex flex-col items-center"
           >
             <img
-              src={product.photo}
+          src={assets.ProductImage} 
+              // src={product.photo}
               alt={product.name}
               className="w-full h-32 object-cover rounded-md"
             />
-            <h4 className="text-lg font-medium mt-2">{product.name}</h4>
+            <h4 className="text-lg font-medium mt-2 text-white">{product.name}</h4>
           </div>
          </Link>
         ))}

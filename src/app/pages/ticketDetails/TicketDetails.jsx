@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ticketDetailData } from "../../api/apiDemoData";
 import { ChevronLeft } from "lucide-react";
+import assets from "../../assets";
 
 const TicketDetail = () => {
   const { ticketId } = useParams();
@@ -44,15 +45,19 @@ const TicketDetail = () => {
     </div>
 
     <div className="w-full max-w-4xl  mx-auto" >
-     <div className="flex flex-col items-center p-4 border rounded shadow">
+     <div className=" bg-gray-800 flex flex-col items-center p-4 border rounded-lg shadow ">
+         <div className="p-5  rounded-lg items-center">
          <img
-            src={ticket.photo}
+            src={assets.TicketImage}
+            // src={ticket.photo}
             alt={ticket.ticketType}
-            className="w-40 h-50 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
+            className="w-40 h-70 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
           />
-          <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-center">{ticket.ticketType} - {ticket.ticketRole}</h2>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Price: {ticket.price}</p>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
+         </div>
+        
+          <h2 className="text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-center">{ticket.ticketType} - {ticket.ticketRole}</h2>
+          <p className="text-white text-sm sm:text-base lg:text-lg xl:text-xl text-center">Price: {ticket.price}</p>
+          <p className=" text-white text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
 
           <div className="my-4 text-center">
             <label className="block text-sm sm:text-base font-bold mb-2">Quantity</label>

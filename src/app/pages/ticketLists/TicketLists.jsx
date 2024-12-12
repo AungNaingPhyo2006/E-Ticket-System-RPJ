@@ -1,6 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import assets from "../../assets";
 
 const TicketList = () => {
   const location = useLocation();
@@ -26,17 +27,18 @@ const TicketList = () => {
 
       <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto" >
       {tickets.map((ticket) => (
-          <div key={ticket.id} className="p-4 border rounded shadow cursor-pointer" onClick={() => handleTicketClick(ticket.id)}>
-            <img
-              src={ticket.photo}
+          <div key={ticket.id} className="bg-gray-800 p-4 border rounded-lg shadow cursor-pointer" onClick={() => handleTicketClick(ticket.id)}>
+            <img          
+            src={assets.ProductImage} 
+              // src={ticket.photo}
               alt={ticket.ticketType}
-              className="w-full h-40 object-cover mb-4 rounded-lg"
+              className="w-full h-70 object-cover mb-4 rounded-lg"
             />
-            <h2 className="text-lg font-bold">
+            <h2 className="text-lg font-bold text-white">
               {ticket.ticketType} - {ticket.ticketRole}
             </h2>
-            <p className="text-sm">Price: {ticket.price}</p>
-            <p className="text-sm">Dates: {ticket.date.join(", ")}</p>
+            <p className="text-sm text-white">Price: {ticket.price}</p>
+            <p className="text-sm text-white">Dates: {ticket.date.join(", ")}</p>
           </div>
         ))}
         {/* {tickets.map((ticket) => (

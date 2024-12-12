@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SliderBtn from "../ui/SliderBtn";
 import { usePosts } from "../../api/reactQuery";
 import { Loader2 } from "lucide-react";
+import assets from "../../assets";
 
 const ProductsLists = ({id, title,itemList}) => {
   const navigate = useNavigate();
@@ -27,7 +28,10 @@ const ProductsLists = ({id, title,itemList}) => {
       {itemList.map((item) => (
          <Link to={`/product-detail/${item.id}`}>
         <div key={item.id} className="card bg-gray-800 shadow-md p-4  h-30 items-center justify-center bg-gray-800 cursor-pointer duration-300 active:scale-95 rounded-lg shadow-xl overflow-hidden">
-          <img src={item.photo} alt={item.name} className="w-60 h-30 object-cover mb-4 rounded-md" />
+          <img 
+          src={assets.ProductImage} 
+          // src={item.photo} 
+          alt={item.name} className="w-60 h-30 object-cover mb-4 rounded-md" />
           <p className="text-lg font-semibold text-white">{item.name}</p>
         </div>
          </Link> 

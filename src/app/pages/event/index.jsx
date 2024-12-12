@@ -19,7 +19,7 @@ const Events = () => {
         {eventList.slice(0, 3).map((event) => (
           <div
             key={event.id}
-            className="relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
+            className=" p-3 bg-gray-800 relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
             style={{ height: "300px" }}
             onClick={() => handleEventClick(event.id)}
           >

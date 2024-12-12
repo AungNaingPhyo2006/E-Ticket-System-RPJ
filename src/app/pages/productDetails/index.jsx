@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { itemList } from '../../api/apiDemoData';
 import { ChevronLeft } from 'lucide-react';
+import assets from '../../assets';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -33,16 +34,17 @@ const ProductDetails = () => {
       </button>
        </div>
 
-      <div className="card bg-base-100 items-center shadow-xl p-6">
+      <div className="card bg-gray-800 items-center shadow-xl p-6">
         <img
-          src={product.photo}
+          src={assets.ProductImage} 
+          // src={product.photo}
           alt={product.name}
           className="w-50 h-50 sm:w-64 sm:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-112 object-cover mb-6 rounded-lg"
         />
-        <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
-        <p className="text-lg text-gray-700 mb-2">Price: ${product.price}</p>
-        <p className="text-lg text-gray-700 mb-2">Stock: {product.stock}</p>
-        <p className="text-gray-600">{product.description}</p>
+        <h2 className="text-white text-3xl font-bold mb-2">{product.name}</h2>
+        <p className="text-white text-lg text-gray-700 mb-2">Price: ${product.price}</p>
+        <p className="text-white text-lg text-gray-700 mb-2">Stock: {product.stock}</p>
+        <p className="text-white text-gray-600">{product.description}</p>
       </div>
     </div>
   );
