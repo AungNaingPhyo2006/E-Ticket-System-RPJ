@@ -3,9 +3,9 @@ import { receiptData } from "../../api/apiDemoData";
 
 const ReceiptHistory = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="min-h-screen mx-auto p-4 bg-base-200">
       <h1 className="text-5xl font-bold text-center mb-8">Receipt History</h1>
-    <div>
+      <div className="container mx-auto p-4 bg-base-200">
         {receiptData.receiptList.map((receipt, index) => (
           <div
             key={index}
