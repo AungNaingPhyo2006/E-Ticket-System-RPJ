@@ -223,4 +223,48 @@ export const sectionList = [
     },
   ];
   
+  export const receiptData = {
+    receiptList: [
+      {
+        purchasedDate: "Nov 24, 2024",
+        purchasedItems: [
+          {
+            name: "paracetamol",
+            price: 2000,
+          },
+          {
+            name: "overflow day 1 GA",
+            price: 20000,
+          },
+        ],
+        totalPrice: 22000,
+      },
+    ],
+  };
   
+  export const ticketHistoryData = {
+    festivalList: [
+      {
+        festival: "Over Flow",
+        ticketList: [
+          {
+            date: ["2024-12-05", "2024-12-06"],
+            time: "2:00 PM",
+            serialNumber: "OVFGA181601",
+            qr: "gZh79nXpJfXq9GzI/UbdzQ==",
+            Location: "Yangon Eastern Park",
+            "Bought Date": "Nov 26, 2024 / 6:27 PM",
+          },
+          {
+            festivalName: "Melody Fest",
+            date: ["2024-12-12"],
+            time: "8:00 PM",
+            serialNumber: "MLDFT572904",
+            qr: "hXn32kRtKdWy6PyJ/ZtpxA==",
+            Location: "Central Park, Mandalay",
+            "Bought Date": "Dec 02, 2024 / 1:30 PM",
+          },
+        ],
+      },
+    ],
+  };
