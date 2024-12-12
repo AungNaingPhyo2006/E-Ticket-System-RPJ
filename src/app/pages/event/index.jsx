@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { eventList, ticketList } from "../../api/apiDemoData";
+import assets from "../../assets";
 
 const Events = () => {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const Events = () => {
             onClick={() => handleEventClick(event.id)}
           >
             <img
-              src={event.photo}
+            src={assets.EventImage}
+              // src={event.photo}
               alt={event.name}
               className="w-full h-full object-cover"
               style={{ height: "100%" }}
