@@ -77,7 +77,7 @@ const TicketDetail = () => {
           <p className=" text-white text-sm sm:text-base lg:text-lg xl:text-xl text-center">Dates: {ticket.date.join(", ")}</p>
 
           <div className="my-4 text-center">
-            <label className="block text-sm sm:text-base font-bold mb-2">Quantity</label>
+            <label className="block text-sm sm:text-base text-white font-bold mb-2">Quantity</label>
             <div className="flex items-center justify-center">
               <button
                 onClick={decrementCount}
@@ -85,7 +85,7 @@ const TicketDetail = () => {
               >
                 -
               </button>
-              <span className="mx-4 text-lg font-bold">{ticketCount}</span>
+              <span className="mx-4 text-lg text-white font-bold">{ticketCount}</span>
               <button
                 onClick={incrementCount}
                 className="bg-gray-200 text-black py-1 px-3 rounded hover:bg-gray-300"
@@ -103,36 +103,42 @@ const TicketDetail = () => {
           </button>
         </div>
       </div>
-
       {isModalOpen && (
         <div className="modal modal-open">
-          <div className="modal-box ">
-            <h3 className="font-bold text-center text-lg">Confirm Your Purchase</h3>
-            <div className="flex flex-col items-center space-y-2">
-              <p className="py-2 text-center">
-                Ticket:<span className="font-bold"> {ticket.ticketType} - {ticket.ticketRole}</span>
-              </p>
-              <p className="py-2 text-center">
-                Price per Ticket:<span className="font-bold"> {ticket.price}</span>
-              </p>
-              <p className="py-2 text-center">
-                Quantity:<span className="font-bold"> {ticketCount}</span>
-              </p>
-              <p className="py-2 text-center">
-                Total Amount:<span className="font-bold">{ticket.price * ticketCount}</span> 
-              </p>
+          <div className="modal-box">
+            <h3 className="font-bold text-center mb-4 text-lg">Confirm Your Purchase</h3>
+            <div className="flex flex-col p-8 items-center bg-primary space-y-3">
+              <div className="flex">
+                <div className="w-1/2 font-semibold"><span>Ticket:</span></div>
+                <div className="w-1/2">{ticket.ticketType} - {ticket.ticketRole}</div>
+              </div>
+              
+              <div className="flex">
+                <div className="w-1/2 font-semibold"><span>Price per Ticket:</span></div>
+                <div className="w-1/2">{ticket.price}</div>
+              </div>
+              
+              <div className="flex">
+                <div className="w-1/2 font-semibold"><span>Quantity:</span></div>
+                <div className="w-1/2">{ticketCount}</div>
+              </div>
+              
+              <div className="flex">
+                <div className="w-1/2 font-semibold"><span>Total Amount:</span></div>
+                <div className="w-1/2">{ticket.price * ticketCount}</div>
+              </div>
             </div>
 
-            <div className="modal-action flex justify-center space-x-4">
+            <div className="modal-action flex justify-center space-x-4 mt-4">
               <button
                 onClick={closeModal}
-                className="btn btn-outline btn-error w-32 text-center"
+                className="btn btn-outline btn-error w-32"
               >
                 Cancel
               </button>
               <button
                 onClick={handleConfirm}
-                className="btn btn-primary w-32 text-center"
+                className="btn btn-primary w-32"
               >
                 Confirm
               </button>
