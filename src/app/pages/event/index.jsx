@@ -13,7 +13,7 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base-200 p-8">
+    <div className="min-h-screen bg-base-200 p-4">
       <h1 className="text-5xl font-bold text-center mb-8">Events</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {eventList.slice(0, 3).map((event) => (
