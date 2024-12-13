@@ -15,22 +15,21 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-base-200 p-8">
       <h1 className="text-5xl font-bold text-center mb-8">Events</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {eventList.slice(0, 3).map((event) => (
           <div
             key={event.id}
-            className=" p-3 bg-gray-800 relative w-full h-full rounded-[10px] overflow-hidden cursor-pointer"
-            style={{ height: "300px" }}
+            className="bg-gray-800 relative w-full rounded-[10px] overflow-hidden cursor-pointer"
             onClick={() => handleEventClick(event.id)}
           >
             <img
-            src={assets.EventImage}
+              src={assets.EventImage}
               // src={event.photo}
               alt={event.name}
-              className="w-full h-full object-cover"
-              style={{ height: "100%" }}
+              className="w-full object-cover rounded-t-[10px]"
+              style={{ height: "200px" }}
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+            <div className="bg-gray-900 text-white p-4 rounded-b-[10px]">
               <h2 className="text-lg font-bold">{event.name}</h2>
               <p className="text-sm">{event.location}</p>
               <p className="text-sm">Start Date: {event.startDate}</p>
@@ -44,3 +43,5 @@ const Events = () => {
 };
 
 export default Events;
+
+
