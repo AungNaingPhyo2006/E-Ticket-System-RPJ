@@ -6,8 +6,18 @@ export const sectionList = [
       title: "Festivals",
       categoryId: 1,
       itemList: [
-        { id: 1, name: 'OverFlow', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' },
-        { id: 2, name: 'New Year Event', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvUe-FEdfvmbPXm-ZKXNEs2jeRMGt-detjZw&s' },
+        { id: 1, name: 'OverFlow', 
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp8-n4TvVCR2YkE2Y1RWqNNUK9VXUpEh1cPA&s' ,
+          startDate: "2024-12-07",
+          endDate: "2024-12-08",
+          location: "Yangon Easter Park",
+        },
+        { id: 2, name: 'New Year Event', 
+          photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvUe-FEdfvmbPXm-ZKXNEs2jeRMGt-detjZw&s' ,
+          startDate: "2024-12-30",
+          endDate: "2024-12-30",
+          location: "Yangon Easter Park",
+        },
       ],
     },
     {
@@ -227,42 +237,74 @@ export const sectionList = [
     receiptList: [
       {
         purchasedDate: "Nov 24, 2024",
-        purchasedItems: [
-          {
-            name: "paracetamol",
-            price: 2000,
-          },
-          {
-            name: "overflow day 1 GA",
-            price: 20000,
-          },
-        ],
-        totalPrice: 22000,
+        purchasedList: {
+          purchasedItems: [
+            { name: "paracetamol", price: 2000 },
+            { name: "Overflow Day 1 GA", price: 20000 },
+          ],
+          totalPrce: 22000,
+        },
+      },
+      {
+        purchasedDate: "Nov 25, 2024",
+        purchasedList: {
+          purchasedItems: [
+            { name: "paracetamol", price: 2000 },
+            { name: "Overflow Day 1 GA", price: 20000 },
+          ],
+          totalPrce: 22000,
+        },
       },
     ],
   };
   
+  
   export const ticketHistoryData = {
     festivalList: [
       {
-        festival: "Over Flow",
-        ticketList: [
+        festivalName: "OverFlow",
+        purchasedList: [
           {
-            date: ["2024-12-05", "2024-12-06"],
-            time: "2:00 PM",
-            serialNumber: "OVFGA181601",
-            qr: "gZh79nXpJfXq9GzI/UbdzQ==",
-            Location: "Yangon Eastern Park",
-            "Bought Date": "Nov 26, 2024 / 6:27 PM",
+            purchasedDate: "Nov 25, 2024 ",
+            ticetList: [
+              {
+                date: ["2024-12-05", "2024-12-06"],
+                time: "1:00 PM",
+                serialNumber: "OVFGA181601",
+                qrCode: "gZh79nXpJfXq9GzI/UbdzQ==",
+                Location: "Yangon Eastern Park",
+                purchasedDate: "1:27 PM",
+              },
+              {
+                date: ["2024-12-12"],
+                time: "3:00 PM",
+                serialNumber: "MLDFT572904",
+                qr: "hXn32kRtKdWy6PyJ/ZtpxA==",
+                Location: "Central Park, Mandalay",
+                purchasedDate: "6:30 PM",
+              },
+            ],
           },
           {
-            festivalName: "Melody Fest",
-            date: ["2024-12-12"],
-            time: "8:00 PM",
-            serialNumber: "MLDFT572904",
-            qr: "hXn32kRtKdWy6PyJ/ZtpxA==",
-            Location: "Central Park, Mandalay",
-            "Bought Date": "Dec 02, 2024 / 1:30 PM",
+            purchasedDate: "Nov 26, 2024 ",
+            ticetList: [
+              {
+                date: ["2024-12-05", "2024-12-06"],
+                time: "2:00 PM",
+                serialNumber: "OVFGA181601",
+                qrCode: "gZh79nXpJfXq9GzI/UbdzQ==",
+                Location: "Yangon Eastern Park",
+                purchasedDate: "1:27 PM",
+              },
+              {
+                date: ["2024-12-12"],
+                time: "8:00 PM",
+                serialNumber: "MLDFT572904",
+                qr: "hXn32kRtKdWy6PyJ/ZtpxA==",
+                Location: "Central Park, Mandalay",
+                purchasedDate: "6:30 PM",
+              },
+            ],
           },
         ],
       },
