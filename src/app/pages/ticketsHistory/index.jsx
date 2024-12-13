@@ -43,7 +43,7 @@ const TicketHistory = () => {
             {festival.ticketList.map((ticket, ticketIndex) => (
               <>
               {/* <======Download start====> */}
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mt-8">
                       <button
                         className="btn btn-primary"
                         onClick={() => handleDownloadTicket(ticketIndex)}
@@ -114,6 +114,3 @@ const TicketHistory = () => {
 };
 
 export default TicketHistory;
-
-
-

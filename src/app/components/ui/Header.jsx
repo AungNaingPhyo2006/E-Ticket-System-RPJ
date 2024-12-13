@@ -54,13 +54,13 @@ const Header = () => {
                 className="btn btn-ghost btn-sm rounded-btn text-lg hover:bg-base-200 transition duration-300"
                 to="/ticket-history"
               >
-                Ticket History
+                Your Tickets 
               </Link>
               <Link
                 className="btn btn-ghost btn-sm rounded-btn text-lg hover:bg-base-200 transition duration-300"
                 to="/receipt-history"
               >
-                Receipt History
+                Receipts
               </Link>
             </div>
           </div>
@@ -128,7 +128,7 @@ const Header = () => {
                 className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/ticket-history")}
               >
-                Ticket History
+                Your Tickets
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
@@ -137,7 +137,7 @@ const Header = () => {
                 className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/receipt-history")}
               >
-                Receipt History
+                Receipts
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
