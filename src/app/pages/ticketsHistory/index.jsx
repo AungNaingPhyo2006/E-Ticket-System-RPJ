@@ -42,6 +42,16 @@ const TicketHistory = () => {
             {/* Tickets */}
             {festival.ticketList.map((ticket, ticketIndex) => (
               <>
+              {/* <======Download start====> */}
+              <div className="flex justify-center mb-8">
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => handleDownloadTicket(ticketIndex)}
+                      >
+                        Download Ticket
+                      </button>
+                    </div>
+                {/* <======Download end======> */}
                <div 
                ref={(el) => (ticketRefs.current[ticketIndex] = el)}> 
                {/* <=====Main=====> */}
@@ -93,17 +103,6 @@ const TicketHistory = () => {
               </div>
               {/* <=====Main=====> */}
               </div>
-
-                     {/* <======Download====> */}
-                     <div className="flex justify-center mb-8">
-                      <button
-                        className="btn btn-primary"
-                        onClick={() => handleDownloadTicket(ticketIndex)}
-                      >
-                        Download Ticket
-                      </button>
-                    </div>
-                {/* <======Download======> */}
               </>
 
             ))}
