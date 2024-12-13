@@ -99,7 +99,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close Drawer"
               >
-                <X size={25} color="white" />
+                <X size={25} color="black" />
               </button>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Header = () => {
           <ul className="space-y-6">
             <li>
               <button
-                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/")}
               >
                 Home
@@ -116,7 +116,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/events")}
               >
                 Events
@@ -125,7 +125,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/ticket-history")}
               >
                 Ticket History
@@ -134,7 +134,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/receipt-history")}
               >
                 Receipt History
@@ -143,7 +143,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                className="w-full text-left py-4 px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
+                className="w-full text-left  px-3 rounded-lg hover:bg-base-200 active:bg-base-300 transition duration-300 font-medium relative group"
                 onClick={() => handleMenuClick("/my-cart")}
               >
                 My Cart
