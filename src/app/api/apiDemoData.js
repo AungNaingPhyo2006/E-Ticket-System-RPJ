@@ -232,7 +232,7 @@ export const sectionList = [
       date: ["2024-12-10"],
     },
   ];
-  
+
   export const receiptData = {
     receiptList: [
       {
@@ -257,8 +257,7 @@ export const sectionList = [
       },
     ],
   };
-  
-  
+
   export const ticketHistoryData = {
     festivalList: [
       {
