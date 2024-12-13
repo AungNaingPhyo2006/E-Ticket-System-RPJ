@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { ticketHistoryData } from "../../api/apiDemoData";
 import QRCode from "react-qr-code"; // Import react-qr-code library
 import { toPng } from "html-to-image";
+import { ArrowDownToLine, DownloadIcon } from "lucide-react";
 
 const TicketHistory = () => {
   const ticketRefs = useRef([]);
@@ -43,12 +44,12 @@ const TicketHistory = () => {
             {festival.ticketList.map((ticket, ticketIndex) => (
               <>
               {/* <======Download start====> */}
-              <div className="flex justify-center mt-8">
+                   <div className="flex justify-center mt-8">
                       <button
-                        className="btn btn-primary"
+                        className="flex items-center justify-center w-10 h-10 bg-white text-primary rounded-full shadow hover:bg-gray-100"
                         onClick={() => handleDownloadTicket(ticketIndex)}
                       >
-                        Download Ticket
+                        <ArrowDownToLine size={24} />
                       </button>
                     </div>
                 {/* <======Download end======> */}
