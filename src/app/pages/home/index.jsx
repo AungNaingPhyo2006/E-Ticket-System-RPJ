@@ -1,7 +1,6 @@
 import React from "react";
 import FestivalList from "../../components/layout/FestivalList";
 import ProductsLists from "../../components/layout/ProductsLists";
-import TicketList from "../../components/layout/TicketList";
 import { sectionList } from "../../api/apiDemoData";
 import Footer from "../../components/ui/Footer";
 
