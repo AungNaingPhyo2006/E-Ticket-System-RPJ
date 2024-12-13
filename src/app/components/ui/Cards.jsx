@@ -12,7 +12,7 @@ const Cards = ({ festival }) => {
              alt={festival.name}
              className="w-full h-80 object-cover mb-4 rounded-lg"
            />
-           <p className="text-lg font-semibold text-white">{festival.name}</p>
+           <p className="text-lg font-semibold p-4 text-white">{festival.name}</p>
          </div>
     </div>
     </div>

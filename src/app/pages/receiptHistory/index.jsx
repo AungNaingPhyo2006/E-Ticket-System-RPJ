@@ -1,33 +1,60 @@
+
 import React from "react";
-import { receiptData, ticketHistoryData } from "../../api/apiDemoData";
+import { receiptData } from "../../api/apiDemoData";
 
 const ReceiptHistory = () => {
+  if (!receiptData || !receiptData.receiptList || receiptData.receiptList.length === 0) {
+    return <p>No receipt data available.</p>;
+  }
+
   return (
     <div className="min-h-screen mx-auto p-4 bg-base-200">
       <h1 className="text-5xl font-bold text-center mb-8">Receipt History</h1>
 
-      {/* Displaying all receiptData */}
       <div className="container mx-auto p-4 bg-base-200 mb-8">
         {receiptData.receiptList.map((receipt, index) => (
           <div
             key={index}
-            className="card bg-base-100 items-center shadow-xl p-6 mb-4 max-w-lg mx-auto"
+            className="card bg-base-100 shadow-xl p-6 mb-4 max-w-full lg:max-w-3xl mx-auto"
           >
             <h2 className="text-2xl font-bold mb-2">
-              Purchase Date: {receipt.purchasedDate}
+              Purchase Date: {receipt.purchasedDate || "N/A"}
             </h2>
-            <div className="w-full">
-              <h3 className="text-lg font-semibold mb-2">Purchased Items:</h3>
-              <ul className="list-disc pl-6">
-                {receipt.purchasedItems.map((item, idx) => (
-                  <li key={idx} className="mb-1">
-                    <span className="font-medium">{item.name}</span>: ${item.price.toLocaleString()}
-                  </li>
-                ))}
-              </ul>
+
+            <div className="w-full mb-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="hidden sm:table-row">
+                    <th>Name</th>
+                    <th className="text-right">Qty</th>
+                    <th className="text-right">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {receipt.purchasedList.purchasedItems && receipt.purchasedList.purchasedItems.length > 0 ? (
+                    receipt.purchasedList.purchasedItems.map((item, idx) => (
+                      <tr key={idx} className="border-b">
+                        <td className="break-words">{item.name || "Unnamed Item"}</td>
+                        <td className="text-right">1</td> 
+                        <td className="text-right">${(item.price).toFixed(2)}</td> 
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="3" className="text-center text-sm text-gray-500">
+                        No items found.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
+
             <div className="mt-4 text-lg font-bold">
-              Total Price: ${receipt.totalPrice.toLocaleString()}
+              <div className="flex justify-between text-sm font-bold">
+                <p>Sub Total</p>
+                <p>${(receipt.purchasedList.totalPrce).toFixed(2)}</p> 
+              </div>
             </div>
           </div>
         ))}
@@ -39,50 +66,88 @@ const ReceiptHistory = () => {
 export default ReceiptHistory;
 
 
+
 // import React from "react";
 // import { receiptData } from "../../api/apiDemoData";
 
 // const ReceiptHistory = () => {
+//   if (!receiptData || !receiptData.purchasedList || receiptData.purchasedList.length === 0) {
+//     return <p>No receipt data available.</p>;
+//   }
+
 //   return (
 //     <div className="min-h-screen mx-auto p-4 bg-base-200">
 //       <h1 className="text-5xl font-bold text-center mb-8">Receipt History</h1>
-//       <div className="container mx-auto p-4 bg-base-200">
-//         {receiptData.receiptList.map((receipt, index) => (
+
+//       <div className="container mx-auto p-4 bg-base-200 mb-8">
+//         {receiptData.purchasedList.map((receipt, index) => (
 //           <div
 //             key={index}
-//             className="card bg-base-100 items-center shadow-xl p-6 mb-4"
+//             className="card bg-base-100 shadow-xl p-6 mb-4 max-w-full lg:max-w-3xl mx-auto"
 //           >
 //             <h2 className="text-2xl font-bold mb-2">
-//               Purchase Date: {receipt.purchasedDate}
+//               Purchase Date: {receipt.purchasedDate || "N/A"}
 //             </h2>
-//             <div className="w-full">
-//               <h3 className="text-lg font-semibold mb-2">Purchased Items:</h3>
-//               <ul className="list-disc pl-6">
-//                 {receipt.purchasedItems.map((item, idx) => (
-//                   <li key={idx} className="mb-1">
-//                     <span className="font-medium">{item.name}</span>: ${item.price.toLocaleString()}
-//                   </li>
-//                 ))}
-//               </ul>
+
+//             <div className="w-full mb-4">
+//               {/* <h3 className="text-lg font-semibold mb-2">Purchased Items:</h3> */}
+//               <table className="w-full text-sm">
+//                 <thead>
+//                   <tr className="hidden sm:table-row">
+//                     <th>Name</th>
+//                     <th className="text-right">Qty</th>
+//                     <th className="text-right">Price</th>
+//                   </tr>
+//                 </thead>
+//                 <tbody>
+//                   {receipt.purchasedItems && receipt.purchasedItems.length > 0 ? (
+//                     receipt.purchasedItems.map((item, idx) => (
+//                       <tr key={idx} className="border-b">
+//                         <td className="break-words">{item.name || "Unnamed Item"}</td>
+//                         <td className="text-right">{item.quantity || 1}</td>
+//                         <td className="text-right">${(item.price || 1).toFixed(2)}</td>
+//                       </tr>
+//                     ))
+//                   ) : (
+//                     <tr>
+//                       <td colSpan="3" className="text-center text-sm text-gray-500">
+//                         No items found.
+//                       </td>
+//                     </tr>
+//                   )}
+//                 </tbody>
+//               </table>
 //             </div>
+
 //             <div className="mt-4 text-lg font-bold">
-//               Total Price: ${receipt.totalPrice.toLocaleString()}
+//               <div className="flex justify-between text-sm font-bold">
+//                 <p>Sub Total</p>
+//                 <p>${(receipt.totalPrice || 0).toFixed(2)}</p>
+//               </div>
+//               <div className="flex justify-between text-sm">
+//                 <p>Cash</p>
+//                 <p>${(receipt.cashAmount || 0).toFixed(2)}</p>
+//               </div>
+//               <div className="flex justify-between text-sm">
+//                 <p>Change</p>
+//                 <p>${(receipt.change || 0).toFixed(2)}</p>
+//               </div>
 //             </div>
+
+//             {receipt.cashierId && receipt.managerName && (
+//               <div className="mt-4 text-sm text-gray-700">
+//                 <div>Cashier ID: {receipt.cashierId}</div>
+//                 <div>Manager: {receipt.managerName}</div>
+//               </div>
+//             )}
 //           </div>
 //         ))}
 //       </div>
-//  </div>
+//     </div>
 //   );
 // };
 
 // export default ReceiptHistory;
-//  {/* QR Code generation for the corresponding ticket */}
-//  {ticketHistoryData.festivalList.map((festival) => (
-//   festival.ticketList.map((ticket, ticketIdx) => (
-//     <div key={ticketIdx} className="mt-4 text-center">
-//       {/* Always display the QR code for each ticket */}
-//       <QRCode value={ticket.qr} size={128} />
-//       <p className="mt-2 text-center">QR Value: {ticket.qr}</p>
-//     </div>
-//   ))
-// ))}
+
+
+
