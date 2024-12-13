@@ -74,6 +74,3 @@ const TicketHistory = () => {
 };
 
 export default TicketHistory;
-
-
-
