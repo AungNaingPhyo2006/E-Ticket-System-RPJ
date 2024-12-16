@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { ticketHistoryData } from "../../api/apiDemoData";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
-import { ArrowDownToLine,ChevronDown, ChevronUp,} from "lucide-react"; // Icons
+import { ArrowDownToLine, ChevronDown, ChevronUp } from "lucide-react"; // Icons
 
 const TicketHistory = () => {
   const [expandedTicketIndex, setExpandedTicketIndex] = useState(null); // Tracks the expanded ticket
@@ -37,80 +37,82 @@ const TicketHistory = () => {
 
             {festival.purchasedList.map((purchase, purchaseIndex) => (
               <div key={purchaseIndex}>
-                <div className="flex justify-center items-center mb-4">
-                  <h3 className="text-xl font-bold mr-4">Purchased on: {purchase.purchasedDate}</h3>
-                  <button
-                    className="p-2 bg-gray-400 text-white rounded-full"
-                    onClick={() => toggleExpandTicket(purchaseIndex)}
-                  >
-                    {expandedTicketIndex === purchaseIndex ? (
-                      <ChevronDown size={24} />
-                    ) : (
-                      <ChevronUp size={24} />
-                    )}
-                  </button>
-                </div>
+                <div className="border-2 border-gray-300 rounded-md p-4 mb-4 shadow-md">
+                  <div className="flex justify-center items-center space-x-4">
+                    <h3 className="text-xl font-bold">Purchased on: {purchase.purchasedDate}</h3>
+                    <button
+                      className="p-2 bg-gray-400 text-white rounded-full"
+                      onClick={() => toggleExpandTicket(purchaseIndex)}
+                    >
+                      {expandedTicketIndex === purchaseIndex ? (
+                        <ChevronUp size={24} />
+                      ) : (
+                        <ChevronDown size={24} />
+                      )}
+                    </button>
+                  </div>
 
-                {expandedTicketIndex === purchaseIndex && (
-                    <div className="border-2 border-gray-300 rounded-md p-4 mt-4 shadow-md">
-                    {/* Ticket Details */}
-                    {purchase.ticetList.map((ticket, ticketIndex) => (
-                      <div key={ticketIndex}>
-                        {/* Download Button */}
-                        <div className="flex justify-center mt-8">
-                          <button
-                            className="flex items-center justify-center w-10 h-10 bg-white text-primary rounded-full shadow hover:bg-gray-100"
-                            onClick={() => handleDownloadTicket(ticketIndex)}
-                          >
-                            <ArrowDownToLine size={24} />
-                          </button>
-                        </div>
+                  {/* Ticket Details inside the bordered section */}
+                  {expandedTicketIndex === purchaseIndex && (
+                    <div className="mt-4">
+                      {purchase.ticetList.map((ticket, ticketIndex) => (
+                        <div key={ticketIndex}>
+                          {/* Download Button */}
+                          <div className="flex justify-center mt-8">
+                            <button
+                              className="flex items-center justify-center w-10 h-10 bg-white text-primary rounded-full shadow hover:bg-gray-100"
+                              onClick={() => handleDownloadTicket(ticketIndex)}
+                            >
+                              <ArrowDownToLine size={24} />
+                            </button>
+                          </div>
 
-                        {/* Ticket Card */}
-                        <div ref={(el) => (ticketRefs.current[ticketIndex] = el)}>
-                          <div className="card bg-base-100 shadow-lg p-6 mb-2 max-w-lg mx-auto">
-                            <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
+                          {/* Ticket Card */}
+                          <div ref={(el) => (ticketRefs.current[ticketIndex] = el)}>
+                            <div className="card bg-base-100 shadow-lg p-6 mb-2 max-w-lg mx-auto">
+                              <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
 
-                            <div className="flex w-full justify-between mt-4">
-                              <div className="w-2/3 font-semibold"><span>Serial Number</span></div>
-                              <div className="w-full break-all">:{ticket.serialNumber}</div>
-                            </div>
+                              <div className="flex w-full justify-between mt-4">
+                                <div className="w-2/3 font-semibold"><span>Serial Number</span></div>
+                                <div className="w-full break-all">:<span className="pl-8">{ticket.serialNumber}</span></div>
+                              </div>
 
-                            <div className="flex w-full justify-between mt-4">
-                              <div className="w-2/3 font-semibold"><span>Location</span></div>
-                              <div className="w-full break-all">:{ticket.Location}</div>
-                            </div>
+                              <div className="flex w-full justify-between mt-4">
+                                <div className="w-2/3 font-semibold"><span>Location</span></div>
+                                <div className="w-full break-all">:<span className="pl-8">{ticket.Location}</span></div>
+                              </div>
 
-                            <div className="flex w-full justify-between mt-4">
-                              <div className="w-2/3 font-semibold"><span>Date</span></div>
-                              <div className="w-full break-all">:{ticket.date.join(", ")}</div>
-                            </div>
+                              <div className="flex w-full justify-between mt-4">
+                                <div className="w-2/3 font-semibold"><span>Date</span></div>
+                                <div className="w-full break-all">:<span className="pl-8">{ticket.date.join(", ")}</span></div>
+                              </div>
 
-                            <div className="flex w-full justify-between mt-4">
-                              <div className="w-2/3 font-semibold"><span>Time</span></div>
-                              <div className="w-full break-all">:{ticket.time}</div>
-                            </div>
+                              <div className="flex w-full justify-between mt-4">
+                                <div className="w-2/3 font-semibold"><span>Time</span></div>
+                                <div className="w-full break-all">:<span className="pl-8">{ticket.time} </span></div>
+                              </div>
 
-                            <div className="flex w-full justify-between mt-4">
-                              <div className="w-2/3 font-semibold"><span>Bought Date</span></div>
-                              <div className="w-full break-all">:{ticket.purchasedDate}</div>
-                            </div>
+                              <div className="flex w-full justify-between mt-4">
+                                <div className="w-2/3 font-semibold"><span>Bought Date</span></div>
+                                <div className="w-full break-all"> : <span className="pl-8">{ticket.purchasedDate}</span></div>
+                              </div>
 
-                            {/* QR Code */}
-                            <div className="my-16">
-                              <span className="font-medium flex justify-center">QR Code:</span>
-                              <div className="flex justify-center">
-                                <div className="rounded border-2 border-white inline-block">
-                                  <QRCode value={ticket.qr || ''} size={128} />
+                              {/* QR Code */}
+                              <div className="my-16">
+                                <span className="font-medium flex justify-center">QR Code:</span>
+                                <div className="flex justify-center">
+                                  <div className="rounded border-2 border-white inline-block">
+                                    <QRCode value={ticket.qr || ''} size={128} />
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -121,6 +123,8 @@ const TicketHistory = () => {
 };
 
 export default TicketHistory;
+
+
 
 
 
