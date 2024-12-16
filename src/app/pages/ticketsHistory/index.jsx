@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { ticketHistoryData } from "../../api/apiDemoData";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
-import { ArrowBigDownDash, ArrowDownToLine, ArrowUpToLine } from "lucide-react"; // Icons
+import { ArrowDownToLine,ChevronDown, ChevronUp,} from "lucide-react"; // Icons
 
 const TicketHistory = () => {
   const [expandedTicketIndex, setExpandedTicketIndex] = useState(null); // Tracks the expanded ticket
@@ -40,19 +40,19 @@ const TicketHistory = () => {
                 <div className="flex justify-center items-center mb-4">
                   <h3 className="text-xl font-bold mr-4">Purchased on: {purchase.purchasedDate}</h3>
                   <button
-                    className="p-2 bg-primary text-white rounded-full"
+                    className="p-2 bg-gray-400 text-white rounded-full"
                     onClick={() => toggleExpandTicket(purchaseIndex)}
                   >
                     {expandedTicketIndex === purchaseIndex ? (
-                      <ArrowBigDownDash size={24} />
+                      <ChevronDown size={24} />
                     ) : (
-                      <ArrowBigDownDash size={24} />
+                      <ChevronUp size={24} />
                     )}
                   </button>
                 </div>
 
                 {expandedTicketIndex === purchaseIndex && (
-                  <div>
+                    <div className="border-2 border-gray-300 rounded-md p-4 mt-4 shadow-md">
                     {/* Ticket Details */}
                     {purchase.ticetList.map((ticket, ticketIndex) => (
                       <div key={ticketIndex}>
