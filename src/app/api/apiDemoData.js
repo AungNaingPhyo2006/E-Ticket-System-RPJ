@@ -246,6 +246,16 @@ export const sectionList = [
         },
       },
       {
+        purchasedDate: "Nov 24, 2024",
+        purchasedList: {
+          purchasedItems: [
+            { name: "paracetamol", price: 2000 },
+            { name: "Overflow Day 1 GA", price: 20000 },
+          ],
+          totalPrce: 22000,
+        },
+      },
+      {
         purchasedDate: "Nov 25, 2024",
         purchasedList: {
           purchasedItems: [
