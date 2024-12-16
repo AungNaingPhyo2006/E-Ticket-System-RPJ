@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import { ticketHistoryData } from "../../api/apiDemoData";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
-import { ArrowDownToLine, ChevronDown, ChevronUp } from "lucide-react"; // Icons
+import { ArrowDownToLine, ChevronDown, ChevronUp } from "lucide-react";
 
 const TicketHistory = () => {
-  const [expandedTicketIndex, setExpandedTicketIndex] = useState(null); // Tracks the expanded ticket
+  const [expandedTicketIndex, setExpandedTicketIndex] = useState(null); 
   const ticketRefs = useRef([]);
 
   const handleDownloadTicket = async (index) => {
@@ -38,7 +38,7 @@ const TicketHistory = () => {
             {festival.purchasedList.map((purchase, purchaseIndex) => (
               <div key={purchaseIndex}>
                 <div className="border-2 border-gray-300 rounded-md p-4 mb-4 shadow-md">
-                  <div className="flex justify-center items-center space-x-4">
+                  <div className="flex justify-around items-center space-x-4 sm:space-x-6 md:space-x-8">
                     <h3 className="text-xl font-bold">Purchased on: {purchase.purchasedDate}</h3>
                     <button
                       className="p-2 bg-gray-400 text-white rounded-full"
@@ -69,32 +69,32 @@ const TicketHistory = () => {
 
                           {/* Ticket Card */}
                           <div ref={(el) => (ticketRefs.current[ticketIndex] = el)}>
-                            <div className="card bg-base-100 shadow-lg p-6 mb-2 max-w-lg mx-auto">
+                            <div className="card bg-base-100 shadow-lg p-6 mb-2 mx-auto max-w-xs sm:max-w-md md:max-w-lg">
                               <h3 className="text-xl font-bold mb-8 flex justify-center">Ticket Details</h3>
 
                               <div className="flex w-full justify-between mt-4">
-                                <div className="w-2/3 font-semibold"><span>Serial Number</span></div>
-                                <div className="w-full break-all">:<span className="pl-8">{ticket.serialNumber}</span></div>
+                                <div className="w-1/2 sm:w-2/3 font-semibold"><span>Serial Number</span></div>
+                                <div className="w-1/2 sm:w-full break-all">:<span className="sm:pl-4 pl-8">{ticket.serialNumber}</span></div>
                               </div>
 
                               <div className="flex w-full justify-between mt-4">
-                                <div className="w-2/3 font-semibold"><span>Location</span></div>
-                                <div className="w-full break-all">:<span className="pl-8">{ticket.Location}</span></div>
+                                <div className="w-1/2 sm:w-2/3 font-semibold"><span>Location</span></div>
+                                <div className="w-1/2 sm:w-full break-all">:<span className="sm:pl-4 pl-8">{ticket.Location}</span></div>
                               </div>
 
                               <div className="flex w-full justify-between mt-4">
-                                <div className="w-2/3 font-semibold"><span>Date</span></div>
-                                <div className="w-full break-all">:<span className="pl-8">{ticket.date.join(", ")}</span></div>
+                                <div className="w-1/2 sm:w-2/3 font-semibold"><span>Date</span></div>
+                                <div className="w-1/2 sm:w-full break-all">:<span className="sm:pl-4 pl-8">{ticket.date.join(", ")}</span></div>
                               </div>
 
                               <div className="flex w-full justify-between mt-4">
-                                <div className="w-2/3 font-semibold"><span>Time</span></div>
-                                <div className="w-full break-all">:<span className="pl-8">{ticket.time} </span></div>
+                                <div className="w-1/2 sm:w-2/3 font-semibold"><span>Time</span></div>
+                                <div className="w-1/2 sm:w-full break-all">:<span className="sm:pl-4 pl-8">{ticket.time} </span></div>
                               </div>
 
                               <div className="flex w-full justify-between mt-4">
-                                <div className="w-2/3 font-semibold"><span>Bought Date</span></div>
-                                <div className="w-full break-all"> : <span className="pl-8">{ticket.purchasedDate}</span></div>
+                                <div className="w-1/2 sm:w-2/3 font-semibold"><span>Bought Date</span></div>
+                                <div className="w-1/2 sm:w-full break-all"> : <span className="sm:pl-4 pl-8">{ticket.purchasedDate}</span></div>
                               </div>
 
                               {/* QR Code */}
@@ -123,9 +123,4 @@ const TicketHistory = () => {
 };
 
 export default TicketHistory;
-
-
-
-
-
 
